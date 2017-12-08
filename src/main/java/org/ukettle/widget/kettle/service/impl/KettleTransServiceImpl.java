@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.pentaho.di.core.exception.KettleException;
-import org.pentaho.di.core.logging.CentralLogStore;
-import org.pentaho.di.core.logging.Log4jBufferAppender;
+//import org.pentaho.di.core.logging.CentralLogStore;
+//import org.pentaho.di.core.logging.Log4jBufferAppender;
 import org.pentaho.di.core.parameters.UnknownParamException;
 import org.pentaho.di.repository.Repository;
 import org.pentaho.di.repository.RepositoryDirectoryInterface;
@@ -275,9 +275,9 @@ public class KettleTransServiceImpl<T extends KettleSpoon> implements
 	private void iLogging(Trans trans, T entity, String exception) {
 		if (entity.isTest() || trans.getErrors() > 0) {
 			String logChannelId = trans.getLogChannelId();
-			Log4jBufferAppender appender = CentralLogStore.getAppender();
-			String logText = appender.getBuffer(logChannelId, true).toString();
-			CentralLogStore.discardLines(logChannelId, true);
+//			Log4jBufferAppender appender = CentralLogStore.getAppender();
+			String logText ="";// appender.getBuffer(logChannelId, true).toString();
+//			CentralLogStore.discardLines(logChannelId, true);
 			if (null == logText || "".equals(logText)) {
 				logText = exception;
 			}

@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.pentaho.di.core.KettleClientEnvironment;
 import org.pentaho.di.core.database.DatabaseMeta;
+import org.pentaho.di.core.encryption.Encr;
 import org.pentaho.di.core.exception.KettleException;
 import org.pentaho.di.core.plugins.PluginRegistry;
 import org.pentaho.di.core.plugins.RepositoryPluginType;
@@ -275,6 +277,7 @@ public class KettleReposServiceImpl<T extends KettleRepos> implements
 			// 选择加载过的资源库
 			RepositoryMeta meta = repositoriesMeta.findRepository(entity
 					.getName());
+			 KettleClientEnvironment.init();
 			// 获得资源库实例
 			repo = PluginRegistry.getInstance().loadClass(
 					RepositoryPluginType.class, meta.getId(), Repository.class);
@@ -301,5 +304,14 @@ public class KettleReposServiceImpl<T extends KettleRepos> implements
 			initRepository(entity, true);
 		}
 	}
-
+public static void main(String[] args) {
+	try {
+		KettleClientEnvironment.init();
+	} catch (KettleException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	String obfuscated = Encr.encryptPasswordIfNotUsingVariables( "root" );
+    System.out.println( obfuscated );
+}
 }

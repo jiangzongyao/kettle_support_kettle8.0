@@ -57,7 +57,8 @@
 						<bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 							<property name="packagesToScan">
 								<list>
-									<value>/*</value>
+									<!-- <value>/*</value> -->
+									<value>org.ukettle.*</value>
 								</list>
 							</property>
 						</bean>

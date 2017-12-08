@@ -10,8 +10,8 @@ import org.pentaho.di.core.KettleVariablesList;
 import org.pentaho.di.core.exception.KettleException;
 import org.pentaho.di.core.exception.KettlePluginException;
 import org.pentaho.di.core.lifecycle.KettleLifecycleSupport;
-import org.pentaho.di.core.logging.CentralLogStore;
-import org.pentaho.di.core.logging.LogWriter;
+//import org.pentaho.di.core.logging.CentralLogStore;
+//import org.pentaho.di.core.logging.LogWriter;
 import org.pentaho.di.core.plugins.DatabasePluginType;
 import org.pentaho.di.core.plugins.ImportRulePluginType;
 import org.pentaho.di.core.plugins.JobEntryPluginType;
@@ -74,9 +74,9 @@ public class KettleEnvironment {
 			// 初始化 kettle.properties 初始化其他属性等
 			environmentInit();
 			// 初始化日志
-			CentralLogStore.init();
-			// 设置控制台日志级用来调试
-			LogWriter.setConsoleAppenderDebug();
+//			CentralLogStore.init();
+//			// 设置控制台日志级用来调试
+//			LogWriter.setConsoleAppenderDebug();
 			// 配置简单的JNDI 仅供我们在单机模式运行
 			if (simpleJndi) {
 				JndiUtil.initJNDI();
