@@ -12,7 +12,7 @@
 		<project.src.directory>src/main/java</project.src.directory>
 		<project.web.directory>src/main/webapp</project.web.directory>
 		<project.resource.directory>src/main/resources</project.resource.directory>
-		<kettle.version>8.0-SNAPSHOT</kettle.version>
+		<kettle.version>8.0.0.1-67</kettle.version>
 		<org.springframework.version>4.3.8.RELEASE</org.springframework.version>
 		<org.codehaus.jackson.version>1.8.10</org.codehaus.jackson.version>
 		<com.sun.jersey.version>1.17.1</com.sun.jersey.version>
