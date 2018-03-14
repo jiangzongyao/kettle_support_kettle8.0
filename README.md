@@ -1,3 +1,5 @@
+Ukettle太难用了，我已经弃用了。但是大家还是可以下载起来学习
+
 # Pentaho | China
 主要功能：
 1.将ukettle kettle 版本修改为8.0.
